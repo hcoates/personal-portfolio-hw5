@@ -81,6 +81,19 @@ function loadLocal() {
   renderProjects(data);
 }
 
+async function loadRemote() {
+  const url = "https://my-json-server.typicode.com/hcoates/portfolio-db";
+
+  try {
+    const res = await fetch(url);
+    console.log("HELP");
+    const data = await res.json();
+    renderProjects(data);
+  } catch (err) {
+    console.error("Error loading remote:", err);
+  }
+}
+
 function renderProjects(projects) {
   const container = document.getElementById("projects-container");
   container.innerHTML = ""; // Clear previous cards
