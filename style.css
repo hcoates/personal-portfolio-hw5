@@ -363,7 +363,7 @@ info-card:has(img) {
 }
 
 /* === Experience === */
-.experience-links {
+.experience-links, .load-data {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -371,7 +371,7 @@ info-card:has(img) {
     flex-wrap: wrap;
 }
 
-.exp-link {
+.exp-link, .data-link {
     display: inline-block;
     background-color: var(--card-bg);
     color: var(--accent);
@@ -385,7 +385,7 @@ info-card:has(img) {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.exp-link:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+.exp-link:hover, .data-link:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
 
 /* === Footer === */
 footer {
