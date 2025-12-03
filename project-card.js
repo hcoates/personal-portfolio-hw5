@@ -34,9 +34,9 @@ class ProjectCard extends HTMLElement {
                     margin-bottom: 1rem;
                 }
 
-                picture img,
+                picture, img,
                 ::slotted(img[slot="image"]) {
-                    width: 80px;
+                    width: 20rem;
                     height: auto;
                     object-fit: contain;
                 }
@@ -64,9 +64,16 @@ class ProjectCard extends HTMLElement {
                     font-size: 0.9rem;
                 }
 
-                a {
-                    color: var(--accent);
+                a,
+                ::slotted(a) {
+                    color: var(--accent-2);
                     font-weight: bold;
+                    transition: transform var(--ui-speed) ease, color var(--ui-speed) ease;
+                }
+
+                a:hover,
+                ::slotted(a:hover) {
+                    color: var(--accent);
                 }
             </style>
 
