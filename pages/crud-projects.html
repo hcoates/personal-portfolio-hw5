@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects</title>
+    <link href="../style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>CRUD Projects</h1>
+        <nav>
+            <a href="experiences.html">Back to Experiences</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CREATE -->
+        <section id="create-project">
+            <h2>Create Project</h2>
+            <form id="create-form">
+                <label>
+                    Title:
+                    <input type="text" name="title" required>
+                </label><br>
+                <label>
+                    Location / Date / Role (comma-separated):
+                    <input type="text" name="details" required>
+                </label><br>
+                <label>
+                    Image URL:
+                    <input type="text" name="image" required>
+                </label><br>
+                <label>
+                    Image Alt Text:
+                    <input type="text" name="imageAlt" required>
+                </label><br>
+                <label>
+                    Link URL:
+                    <input type="text" name="link" required>
+                </label><br>
+                <label>
+                    Bullets (comma-separated):
+                    <textarea name="bullets" required></textarea>
+                </label>
+                <button type="submit">Create Project</button>
+            </form>
+        </section>
+
+        <!-- UPDATE -->
+        <section id="update-project">
+            <h2>Update Project</h2>
+            <form id="update-form">
+                <label>
+                    Index of Project to Update:
+                    <input type="number" name="index">
+                </label><br>
+                <label>
+                    Title:
+                    <input type="text" name="title">
+                </label><br>
+                <label>
+                    Location / Date / Role (comma-separated):
+                    <input type="text" name="details">
+                </label><br>
+                <label>
+                    Image URL:
+                    <input type="text" name="image">
+                </label><br>
+                <label>
+                    Image Alt Text:
+                    <input type="text" name="imageAlt">
+                </label><br>
+                <label>
+                    Link URL:
+                    <input type="text" name="link">
+                </label><br>
+                <label>
+                    Bullets (comma-separated):
+                    <textarea name="bullets"></textarea>
+                </label>
+                <button type="submit">Update Project</button>
+            </form>
+        </section>
+
+        <!-- DELETE -->
+        <section id="delete-project">
+            <h2>Delete Project</h2>
+            <form id="delete-form">
+                <label>
+                    Index of Project to Delete:
+                    <input type="number" name="deleteIndex" required>
+                </label>
+                <button type="submit">Delete Project</button>
+            </form>
+        </section>
+
+        <!-- CURRENT PROJECTS -->
+        <section id="project-list">
+            <h2>Current Projects</h2>
+            <div id="cards-container"></div>
+            <button id="load-local">Load Local</button>
+        </section>
+    </main>
+
+
+    <script src="../project-card.js"></script>
+    <script src="../crud-projects.js"></script>
+</body>
+</html>
