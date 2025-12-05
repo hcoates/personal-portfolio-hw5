@@ -96,24 +96,26 @@ async function loadRemote() {
 
 function renderProjects(projects) {
   const container = document.getElementById("projects-container");
-  container.innerHTML = ""; // Clear previous cards
+  container.innerHTML = "";
 
   projects.forEach(p => {
     const card = document.createElement("project-card");
 
-    // Create a picture element for slotted image
-    const pic = document.createElement("picture");
-    pic.slot = "image";
-    pic.innerHTML = `
+    // image
+    const image = document.createElement("picture");
+    image.slot = "image";
+    image.innerHTML = `
       <img width=50% src="${p.image[0]}" alt="${p.image[1]}" />
     `;
-    card.appendChild(pic);
+    card.appendChild(image);
 
+    // title
     const title = document.createElement("span");
     title.slot = "title";
     title.textContent = p.title;
     card.appendChild(title);
 
+    // description
     const description = document.createElement("span");
     description.slot = "description";
     description.innerHTML = `
@@ -122,9 +124,11 @@ function renderProjects(projects) {
     `;
     card.appendChild(description);
 
+    // link
     const link = document.createElement("a");
     link.slot = "link";
     link.href = p.link;
+    link.target = '_blank';
     link.textContent = "Read More";
     card.appendChild(link);
 
@@ -135,7 +139,6 @@ function renderProjects(projects) {
       li.textContent = b;
       ul.appendChild(li);
     });
-
     card.appendChild(ul);
 
     container.appendChild(card);
