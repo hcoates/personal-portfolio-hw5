@@ -91,7 +91,6 @@ async function loadRemote() {
     });
 
     const data = await res.json();
-    console.log("Loaded JSONBin data:", data.record);
     renderProjects(data.record);
   } catch (err) {
     console.error("Error loading JSONBin:", err);
