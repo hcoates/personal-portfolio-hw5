@@ -209,7 +209,10 @@ dialog[open] {
 }
 
 /* === Info Cards === */
+
+/* Flip container */
 info-card {
+    perspective: 1000px;
     display: block;
     background-color: var(--card-bg);
     border: 3px solid var(--accent);
@@ -218,30 +221,61 @@ info-card {
     box-shadow: 0 4px 8px var(--card-shadow);
     margin: 1rem auto;
     width: 100%;
+    height: 250px;
     text-align: center;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 600px;
+    border: 2px solid var(--accent-2);
 }
 
 info-card:hover {
     transform: scale(1.03);
     box-shadow: var(--card-shadow);
+    border: 2px solid var(--accent);
 }
 
-info-card .card-header {
+info-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+info-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+info-card .card-front,
+info-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--card-radius);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-info-card .card-logo {
-    width: 80px;
-    height: auto;
-    object-fit: contain;
+info-card .card-front {
+    background-color: var(--card-bg);
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid var(--accent);
+}
+
+info-card .card-back {
+    background-color: var(--card-bg);
+    color: var(--text);
+    transform: rotateY(180deg);
+    font-size: 0.9rem;
+    border: 2px solid var(--accent-2);
 }
 
 info-card h3 {
@@ -254,12 +288,6 @@ info-card ul {
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     font-size: 0.9rem;
-}
-
-info-card:has(img) {
-  border-color: var(--accent);
-  border-style: dotted;
-  border-width: 2px;
 }
 
 .skill {
@@ -492,4 +520,3 @@ textarea {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 15px var(--card-shadow);
 }
-
