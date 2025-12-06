@@ -66,6 +66,7 @@ const localData = [
     ]
   }
 ];
+const BIN_URL = "https://api.jsonbin.io/v3/b/6933f5b1ae596e708f87198e";
 
 localStorage.setItem("projects", JSON.stringify(localData));
 
@@ -82,15 +83,18 @@ function loadLocal() {
 }
 
 async function loadRemote() {
-  const url = "https://my-json-server.typicode.com/hcoates/portfolio-db";
-
   try {
-    const res = await fetch(url);
-    console.log("HELP");
+    const res = await fetch(BIN_URL, {
+      headers: {
+        "X-Master-Key": "$2a$10$Ze3exUx5890pbD1vxNwnmebKZHPxKb0..Q4SeisIkpCf7G2/.SO6m"
+      }
+    });
+
     const data = await res.json();
-    renderProjects(data);
+    console.log("Loaded JSONBin data:", data.record);
+    renderProjects(data.record);
   } catch (err) {
-    console.error("Error loading remote:", err);
+    console.error("Error loading JSONBin:", err);
   }
 }
 
