@@ -514,7 +514,6 @@ textarea {
     box-shadow: 0 4px 10px var(--card-shadow);
 }
 
-/* Hover effect matching other buttons */
 #back-to-top:hover {
     background-color: var(--accent-2);
     transform: translateY(-2px) scale(1.05);
@@ -552,4 +551,24 @@ hobby-card h3 {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+#site-search {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#global-search {
+    width: 300px;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--accent-2);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#search-results {
+    margin-top: 1rem;
+    text-align: left;
+    max-width: 600px;
+    margin-inline: auto;
 }
