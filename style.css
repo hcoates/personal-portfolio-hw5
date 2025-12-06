@@ -38,7 +38,6 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
     background: var(--bg);
     color: var(--text);
     font-family: 'Press Start 2P', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -463,5 +462,34 @@ textarea {
   border-radius: 6px;
   font-size: 1rem;
   transition: 0.2s;
+}
+
+/* Back to Top Button styled to match site */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 2px solid var(--accent-2);
+    border-radius: var(--card-radius);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+/* Hover effect matching other buttons */
+#back-to-top:hover {
+    background-color: var(--accent-2);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px var(--card-shadow);
 }
 
