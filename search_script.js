@@ -24,16 +24,10 @@ document.getElementById("global-search").addEventListener("input", async functio
             const text = await res.text();
 
             if (text.toLowerCase().includes(query)) {
-                const snippetIndex = text.toLowerCase().indexOf(query);
-                const snippet = text
-                    .substr(snippetIndex - 30, 60)
-                    .replace(/<[^>]+>/g, "");
-
                 resultsHTML += `
                     <div class="result">
                         <strong>${page.name}</strong> — 
                         <a href="${page.url}">View Page</a>
-                        <p>...${snippet}...</p>
                     </div>
                     <hr>
                 `;
